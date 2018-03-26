@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/Javascript/game.js">
+	<link rel="stylesheet" type="text/css" href="assets/images">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<title>CrystalsCollector Game</title>
+</head>
+
+<body>
+	<h1>CrystalsCollector!</h1>
+	<div id="p">
+		<p>You are given a random number at the start of the game</p>
+		<p>there are four crystals below you wll add a specific amount of points to your total score</p>
+		<p>You win the game by matching your total score to random number</p>
+		<p>You lose the game if your total score goes above the random number</p>
+		<p>The value of each crystal is hidden until you click on it</p>
+		<p>Each time when the game starts the game will change the value of each crystal</p>
+	</div>
+
+	<button id="button"></button>
+
+	<script type="text/javascript">
+
+		var buttons = document.getElementById("button");
+		buttons.innerHTML = buttons.innerHTML + '<img src="http://icons.iconarchive.com/icons/iconshock/real-vista-development/256/ruby-icon.png" height="25" width="25" "button1/ />';
+		console.log(buttons.innerHTML);
+
+		var buttons = document.getElementById("button");
+		buttons.innerHTML = buttons.innerHTML + '<img src="http://icons.iconarchive.com/icons/aha-soft/jewelry/256/Swarovski-crystal-icon.png" height="24" width="24"/ />';
+		console.log(buttons.innerHTML);
+
+		var buttons = document.getElementById("button");
+		buttons.innerHTML = buttons.innerHTML + '<img src="http://icons.iconarchive.com/icons/aha-soft/jewelry/256/Gem-icon.png" height="24" width="24"/ />';
+		console.log(buttons.innerHTML);
+
+		var buttons = document.getElementById("button");
+		buttons.innerHTML = buttons.innerHTML + '<img src= "http://icons.iconarchive.com/icons/aha-soft/jewelry/256/Swarovski-crystal-icon.png" height="24" width="24"/ />';
+		console.log(buttons.innerHTML);
+
+		//Note to self put images into the  css/images and change code
+
+		var computerNum = Math.floor((Math.random() * 100) + 1);
+		var numGuess = 0;
+
+		$("numGuess").text(computerNum);
+		var button = $("#buttons");
+		var counter = 0;
+		//We begin by expanding our array to include four options.
+		var numDisplay = "computerNum";
+		console.log(computerNum);
+
+		// computer guess verses user guess
+		// function drawComputer() {
+
+		if (computerNum === numGuess) {
+			var wins = 0;
+		}
+
+		if (computerNum < numGuess) {
+			var losses = 0;
+		}
+		else if ((computerNum === numGuess) && (computerNum !== numGuess)) {
+			var totalNum = 0;
+
+			// restart game when every player win or losses the game
+			// restart game with new random number and all crystal will have new  hidden values.
+			//set user score and counter to zero
+			// do not refresh page to restart game
+
+			// restart game
+			var currentState, defaultState = {
+				count: 0
+			};
+			function reset() {
+				currentState = {};
+				for (var key in defaultState) {
+				currentState[key] = defaultState[key];
+				}
+			}
+			function i() {
+				reset();
+			}
+			function count() { return ++currentState.count; }
+			i(); count(); count(); count(); count(); reset(); count:0;
+
+			//////////////////////////updating the score
+
+
+			function updateScore(result) {
+				var totalNum = document.getElementById("totalNum");
+				var wins = document.getElementById("wins");
+				var losses = document.getElementById("loses");
+
+				//updating the counter for win
+				if (result === "win") {
+					wins++;
+					wins.innerHTML = wins;
+					console.log(wins);
+				}
+				//updating the counter for lose
+				if (result === "lose") {
+					losses++;
+					losses.innerHTML = losses;
+					console.log(losses);
+				}
+
+			}
+			//updating the counter for totalNum
+			if (result === "totalNum") {
+				totalNum++;
+				totalNum.innerHTML = "Your total score is";
+				console.log(totalNum);
+			}
+		}
+	</script>
+</body>
+
+</html>

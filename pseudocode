@@ -1,0 +1,23 @@
+name: CrystalsCollector Game
+Computer display a number ex. hangman
+Player is going to pick the crystal numbers to add 
+the computer choice
+Display crystals as button on page
+Display random number to player start Game
+OnClick player click crystal add specific Amount of point to total player's total score
+Hide Total amount in game until player clicks crystal
+Player click one(crystal) update player's score counter
+Player  wins-if total score matches random number from beginning of the game
+Player loses-If score > than random number
+restarts game -If player wins or loses
+start game Over-Player views new-Random number
+Assign 4 new hidden values to crystals score and score counter
+rest to zero
+add# of games the player wins
+add# of games the player loses
+End game /do not refresh
+Restart Game.
+
+The random number shown at the start of the game should be between 19 - 120.
+
+* Each crystal should have a random hidden value between 1 - 12.
