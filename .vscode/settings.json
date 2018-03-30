@@ -4,6 +4,7 @@
         "crossorigin",
         "crystal",
         "crystalvalue",
+        "divs",
         "image"
     ]
 }
